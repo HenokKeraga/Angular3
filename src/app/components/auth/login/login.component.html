@@ -1,0 +1,18 @@
+<section class="example-form">
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="email" formControlName="email" />
+      <ng-container *ngIf="loginForm.get('email').touched &&!loginForm.get('email').valid ">
+        <mat-error *ngIf="loginForm.get('email').errors.required">Email is required</mat-error>
+        <mat-error *ngIf="loginForm.get('email').errors.email">Invalid Email</mat-error>
+      </ng-container>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="password" formControlName="password" />
+      <mat-error *ngIf="loginForm.get('password').touched &&! loginForm.get('password').valid">Password is required</mat-error>
+    </mat-form-field>
+    <button mat-button type="submit">Login</button>
+  </form>
+</section>

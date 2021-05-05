@@ -1,0 +1,11 @@
+<section>
+  <div class="example-button-row">
+    <button mat-button color="primary" (click)="increment()">Increment</button>
+    <button mat-button color="primary" (click)="decerment()">Decrement</button>
+    <button mat-button color="primary" (click)="resetValue()">Reset</button>
+  </div>
+  <div>Current Count: {{ (count$ | async) }}</div>
+</section>
+
+<app-custom-counter></app-custom-counter>
+

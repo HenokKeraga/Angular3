@@ -1,0 +1,8 @@
+<app-header></app-header>
+<section class="backdrop" *ngIf="isLoading$ | async">
+  <section class="loading-spinner">
+    <mat-spinner></mat-spinner>
+  </section>
+</section>
+<h1>{{errorMessage$|async}}</h1>
+<router-outlet></router-outlet>

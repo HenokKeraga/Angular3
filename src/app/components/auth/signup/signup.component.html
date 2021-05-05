@@ -1,0 +1,15 @@
+
+<form [formGroup]="sighup" (ngSubmit)="onSignUp()">
+  <mat-form-field>
+    <mat-label>email</mat-label>
+    <input matInput formControlName="email">
+
+  </mat-form-field>
+   <mat-form-field>
+    <mat-label>password</mat-label>
+    <input matInput formControlName="password">
+
+  </mat-form-field>
+  <button type="submit" mat-icon-button >Submit</button>
+
+</form>

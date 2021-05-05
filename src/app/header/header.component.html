@@ -1,0 +1,10 @@
+<div>
+    <button [routerLink]="['']">Home</button>
+    <button *ngIf='isAuthenticated$ | async' [routerLink]="['/counter']">Counter</button>
+    <button *ngIf='isAuthenticated$ | async' [routerLink]="['/post']">Post</button>
+
+    <button *ngIf='!(isAuthenticated$ | async)' [routerLink]="['/auth/login']">Login</button>
+    <button *ngIf='!(isAuthenticated$ | async)' [routerLink]="['/auth/sighup']">Register</button>
+    <button *ngIf='isAuthenticated$ | async' [routerLink]="['']" (click)="onLogout($event)">Logout</button>
+</div>
+

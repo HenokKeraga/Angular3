@@ -1,0 +1,9 @@
+<section>
+  <form  [formGroup]="myForm" class="example-form-field" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <input matInput  formControlName='customValue'/>
+    </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+ 
+  </form>
+</section>

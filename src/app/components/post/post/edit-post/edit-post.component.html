@@ -1,0 +1,13 @@
+<form [formGroup]='myForm' class="example-form" (ngSubmit)="updatePost()">
+  <mat-form-field appearance="standard">
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="title" formControlName='title' />
+    <mat-hint>title</mat-hint>
+  </mat-form-field>
+  <mat-form-field appearance="standard">
+    <mat-label>Description</mat-label>
+    <input matInput placeholder="description"  formControlName='description'/>
+    <mat-hint>description</mat-hint>
+  </mat-form-field>
+  <button mat-button color='primary' type='submit'>Update</button>
+</form>

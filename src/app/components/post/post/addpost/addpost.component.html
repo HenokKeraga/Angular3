@@ -1,0 +1,13 @@
+<section>
+  <form [formGroup]="myForm" class="example-form" (ngSubmit)="onSubmit($event)"  >
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" >Submit</button>
+  </form>
+</section>
