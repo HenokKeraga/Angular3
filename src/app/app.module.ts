@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
@@ -17,16 +17,21 @@ import {AuthEffects} from './components/auth/state/auth.effects';
 import {AuthInterceptor} from './components/auth/service/auth.Interceptor';
 import {StoreRouterConnectingModule, RouterState} from '@ngrx/router-store';
 import {CustomSerializer} from './components/router/custom-route-serializer';
+import {FormsModule} from '@angular/forms';
+import {ColorPickerModule} from 'ngx-color-picker';
+import { ColorSampleComponent } from './components/home/color-sample/color-sample.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, ColorSampleComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
+    FormsModule,
+    ColorPickerModule,
     EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot(appReducer),
     StoreRouterConnectingModule.forRoot({
@@ -39,6 +44,7 @@ import {CustomSerializer} from './components/router/custom-route-serializer';
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {
 }
